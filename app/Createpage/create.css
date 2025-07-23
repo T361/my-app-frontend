@@ -1,0 +1,53 @@
+.signup-card {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.logo {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: 24px;
+  color: #1c1e21;
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #dddfe2;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background-color: #1877f2;
+  color: white;
+}
+
+.btn.secondary {
+  background-color: #e4e6eb;
+  color: #050505;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}

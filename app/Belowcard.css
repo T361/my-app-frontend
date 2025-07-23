@@ -1,0 +1,23 @@
+.below
+{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    color: black;
+}
+.below a
+{
+    color: black;
+
+}
+.below a:hover
+{
+    text-decoration: underline;
+}
+.below
+{
+    line-height: 30px;
+}
+.below{
+    margin-top: 10px;
+}

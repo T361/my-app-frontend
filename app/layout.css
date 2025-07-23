@@ -1,0 +1,305 @@
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  padding: 0 16px;
+  max-width: 100%;
+}
+
+/* Left section styles */
+.nav-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 420px; /* MODIFIED: Increased from 360px to shift center right */
+}
+
+.facebook-logo {
+  margin-right: 10px;
+}
+
+.facebook-icon {
+  color: #1877f2;
+  font-size: 40px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f0f2f5;
+  border-radius: 50px;
+  padding: 8px 12px;
+  width: 100%;
+}
+
+.search-icon {
+  color: #65676b;
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  width: 100%;
+}
+
+/* Center section styles */
+.nav-center {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  max-width: 680px;
+}
+
+.nav-center-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 111.5px;
+  height: 56px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-center-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #1877f2;
+}
+
+.nav-center-btn.active .nav-icon {
+  color: #1877f2;
+}
+
+.nav-icon {
+  font-size: 24px;
+  color: #65676b;
+}
+
+.nav-center-btn:hover .nav-icon {
+  color: #1877f2;
+}
+
+/* Right section styles */
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  gap: 8px;
+}
+
+.menu-button,
+.messenger-button,
+.notifications-button,
+.account-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e4e6eb;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #050505;
+}
+
+.account-icon {
+  font-size: 24px;
+  color: #1877f2;
+}
+
+.account-button {
+  background-color: transparent;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  background-color: #f0f2f5;
+}
+
+/* Only add these active state rules */
+.nav-center-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #1877f2;
+}
+
+.nav-center-btn.active .nav-icon {
+  color: #1877f2;
+}
+
+/* Make sure this exists in your original CSS */
+.nav-center-btn {
+  position: relative; /* Needed for the active indicator */
+}
+/* .logoss {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+
+} */
+/* Center the entire logos container */
+.logoss {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative; /* For absolute positioning if needed */
+}
+
+/* Style for the search container */
+.logoss .search-container {
+  margin-right: 20px; /* Space between search and nav icons */
+}
+
+/* Style for the navigation icons container */
+.logoss .nav-center {
+  display: flex;
+  gap: 15px; /* Space between icons */
+}
+
+/* Style for each nav button */
+.logoss .nav-center-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+/* Active state for home button */
+.logoss .nav-center-btn.active {
+  background-color: #f0f2f5; /* Light gray background */
+}
+
+/* Hover effect for all buttons */
+.logoss .nav-center-btn:hover {
+  background-color: #f0f2f5;
+}
+
+/* Style for icons */
+.logoss .nav-icon {
+  font-size: 24px;
+  color: #65676b; /* Default gray color */
+}
+
+/* Active home icon color */
+.logoss .nav-center-btn.active .nav-icon {
+  color: #1877f2; /* Facebook blue */
+}
+/* Add this to your existing CSS - don't replace everything */
+.logoss {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+/* Search container - responsive width */
+.logoss .search-container {
+  min-width: 240px; /* Minimum width */
+  width: 30vw; /* Responsive width */
+  max-width: 500px; /* Maximum width */
+  display: flex;
+  align-items: center;
+  background: #f0f2f5;
+  border-radius: 50px;
+  padding: 8px 12px;
+  transition: width 0.3s ease;
+}
+
+/* Keep all other existing .logoss styles */
+.logoss .nav-center {
+  display: flex;
+  gap: 15px;
+}
+
+.logoss .nav-center-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.logoss .nav-center-btn.active {
+  background-color: #f0f2f5;
+}
+
+.logoss .nav-center-btn:hover {
+  background-color: #f0f2f5;
+}
+
+.logoss .nav-icon {
+  font-size: 24px;
+  color: #65676b;
+}
+
+.logoss .nav-center-btn.active .nav-icon {
+  color: #1877f2;
+}
+
+/* --- ONLY MEDIA QUERY FOR FULLSCREEN SEARCH BAR EXPANSION --- */
+@media (min-width: 1200px) {
+  .nav-left {
+    max-width: 500px;
+    flex: 0 1 500px;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .nav-left {
+    max-width: 650px;
+    flex: 0 1 650px;
+  }
+}

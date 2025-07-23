@@ -1,0 +1,12 @@
+.desp{
+    line-height: 1px;
+    line-height: 0.005;
+    color: black;
+
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.desp
+{
+    justify-self: center;
+}

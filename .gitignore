@@ -1,0 +1,10 @@
+# dependencies
+node_modules/
+.next/
+
+# local env files
+.env
+
+# logs and system files
+*.log
+.DS_Store

@@ -1,0 +1,116 @@
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 12px 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+/* Navbar content centered */
+nav .nav-inner {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Feed container for spacing below fixed nav */
+.feed-container {
+  padding-top: 70px; /* account for navbar height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Post input area */
+.post-input {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 12px;
+}
+
+.post-input input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #ccd0d5;
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.post-input input:focus {
+  border-color: #1877f2;
+  box-shadow: 0 0 0 2px rgba(24,119,242,0.2);
+}
+
+.post-input button {
+  padding: 12px 20px;
+  background-color: #1877f2;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.post-input button:hover {
+  background-color: #155db2;
+}
+
+/* Post list styling */
+.post-card {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-card p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Delete button */
+.post-card button {
+  padding: 8px 12px;
+  background-color: #dc3545;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.post-card button:hover {
+  background-color: #c82333;
+}
+
+/* General typography */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
