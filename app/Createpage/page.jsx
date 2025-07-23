@@ -1,10 +1,10 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import './create.css'; // Assuming you have some styles defined
+import './create.css';
 
 export default function SignupPage() {
-  const [email, setEmail]     = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
 
@@ -12,18 +12,18 @@ export default function SignupPage() {
     if (!email || !password) return alert('Email and password required');
 
     try {
-      const res = await fetch('https://fbclone-backend-production.up.railway.app/signup', {
+      const res = await fetch('https://fbclone-backend-production.up.railway.app/api/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
 
-      const raw = await res.text();  // get the raw response
+      const raw = await res.text();
       console.log('🧾 Raw response:', raw);
 
       let data;
       try {
-        data = JSON.parse(raw);     // try to parse it
+        data = JSON.parse(raw);
       } catch (parseErr) {
         console.error('❌ JSON parse failed:', parseErr);
         return alert('Server did not return valid JSON');
@@ -61,12 +61,8 @@ export default function SignupPage() {
         onChange={e => setPassword(e.target.value)}
         className="input"
       />
-      <button onClick={signup} className="btn primary">
-        Sign Up
-      </button>
-      <button onClick={() => router.replace('/')} className="btn secondary">
-        Back to Login
-      </button>
+      <button onClick={signup} className="btn primary">Sign Up</button>
+      <button onClick={() => router.replace('/')} className="btn secondary">Back to Login</button>
     </div>
   );
 }

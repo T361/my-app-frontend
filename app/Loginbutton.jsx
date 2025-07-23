@@ -1,12 +1,12 @@
 'use client';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation'; // ✅ for client-side routing
+import { useRouter } from 'next/navigation';
 import './Loginbutton.css';
 
 export default function LoginButton() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const router = useRouter(); // ✅ Hook to handle navigation
+  const router = useRouter();
 
   const login = async () => {
     if (!email || !password) {
@@ -14,7 +14,7 @@ export default function LoginButton() {
     }
 
     try {
-      const res = await fetch('https://fbclone-backend-production.up.railway.app/login', {
+      const res = await fetch('https://fbclone-backend-production.up.railway.app/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -24,7 +24,7 @@ export default function LoginButton() {
 
       if (data.token) {
         localStorage.setItem('token', data.token);
-        router.replace('/Homepage'); // ✅ Redirect on success
+        router.replace('/Homepage');
       } else {
         alert(data.error || 'Login failed');
       }

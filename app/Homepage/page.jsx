@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
-import Layout from '../layout.jsx'; // your Navbar container
-import './page.css'; // Assuming you have some styles defined
+import Layout from '../layout.jsx';
+import './page.css';
 
 export default function Homepage() {
   const [posts, setPosts] = useState([]);
@@ -21,12 +21,12 @@ export default function Homepage() {
   }, [token]);
 
   async function loadPosts() {
-    const res = await fetch('https://fbclone-backend-production.up.railway.app/posts');
+    const res = await fetch('https://fbclone-backend-production.up.railway.app/api/posts');
     setPosts(await res.json());
   }
 
   async function addPost() {
-    const res = await fetch('https://fbclone-backend-production.up.railway.app/addpost', {
+    const res = await fetch('https://fbclone-backend-production.up.railway.app/api/addpost', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ export default function Homepage() {
   }
 
   async function deletePost(id) {
-    const res = await fetch(`https://fbclone-backend-production.up.railway.app/deletepost/${id}`, {
+    const res = await fetch(`https://fbclone-backend-production.up.railway.app/api/deletepost/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -70,9 +70,7 @@ export default function Homepage() {
         <div className="post-list">
           {posts.map(post => (
             <div key={post._id} className="post-card">
-              <p>
-                {post.content} — {post.email}
-              </p>
+              <p>{post.content} — {post.email}</p>
               {post.email === userEmail && (
                 <button onClick={() => deletePost(post._id)}>Delete</button>
               )}
